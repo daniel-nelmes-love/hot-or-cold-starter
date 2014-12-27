@@ -19,7 +19,8 @@ $(document).ready(function(){
   	var userGuess
   	var lastGuess
 
-	$("#guessButton").on("click", function(){
+	$("#guessButton").on("click", function(e){
+		e.preventDefault();
 		userGuess = document.getElementById('userGuess').value;
 		if (userGuess < 1 || userGuess > 100 || userGuess === "0") {
 			$("#feedback").text("Make a guess between 1 and 100");
@@ -35,6 +36,7 @@ $(document).ready(function(){
 	  		}
 	  		console.log("lastGuess: " + lastGuess);
 	  		lastGuess = userGuess;
+
 	  		$('#userGuess').val(null);
 	  	};
 	});
