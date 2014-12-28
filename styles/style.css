@@ -296,6 +296,10 @@ input:focus {
    color: #95a5a6; 
 }
 
+#gameButton {
+	display: none;
+}
+
 ul.guessBox {
 	height: 80px;
 	margin: 10px auto 0;

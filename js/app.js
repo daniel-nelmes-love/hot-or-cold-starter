@@ -13,17 +13,39 @@ $(document).ready(function(){
   	});
 
   	// Global variables //
-  	var randNum = Math.floor((Math.random() * 100) + 1);
-  	console.log(randNum);
+  	var randNum = null
+  	var userCount = null
+  	var userGuess = null
+  	var lastGuess = null
+
+  	// Global functions //
+  	var setNum = function() {
+  		randNum = Math.floor((Math.random() * 100) + 1);
+  		console.log(randNum);
+  	}
   	var resetInput = function() {
   		$("#userGuess").val(null);
   	}
-  	var userCount = 0
-  	var userGuess = null
-  	var lastGuess = randNum
+  	var resetCount = function() {
+  		userCount = 0;
+  		$('#count').text(userCount)
+  	}
+  	var newGame = function() {
+		$("#feedback").text("Make your guess!");
+		$("#guessList").empty();
+		$("#userGuess").show();
+		$("#guessButton").show();
+		$("#gameButton").hide();
+		resetCount();
+		setNum();
+	}
+
+  	// Game start //
+  	setNum();
 
 	$("#guessButton").on("click", function(e){
 		e.preventDefault();
+
 		userGuess = document.getElementById('userGuess').value;
 		
 		// Input error checks //
@@ -54,12 +76,23 @@ $(document).ready(function(){
 	  		$('#count').text(userCount+=1);
 	  		lastGuess = userGuess;
 	  		resetInput()
+	  	}
 
+	  	if(userGuess==randNum) {
+		$("#userGuess").hide();
+		$("#guessButton").hide();
+		$("#gameButton").show();
+		}
 
-	  	};
 	});
 
-
+	// New game //
+	$(".new").on("click", function() {
+		newGame();
+	});
+	$("#gameButton").on("click", function() {
+		newGame();
+	});
 
 
 
