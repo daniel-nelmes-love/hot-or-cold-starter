@@ -31,6 +31,7 @@ $(document).ready(function(){
   		$('#count').text(userCount)
   	}
   	var newGame = function() {
+  		$("section").css("height", "380px")
 		$("#feedback").text("Make your guess!");
 		$("#guessList").empty();
 		$("#userGuess").show();
@@ -82,6 +83,7 @@ $(document).ready(function(){
 		$("#userGuess").hide();
 		$("#guessButton").hide();
 		$("#gameButton").show();
+		$("section").css("height", "305px")
 		}
 
 	});
