@@ -43,7 +43,8 @@ $(document).ready(function(){
 	  		numCheck(0, " is correct! You win!");
 	  		numCheck(1, " is burning Hot");
 	  		numCheck(10, " is hot");
-	  		numCheck(25, " is warm");
+	  		numCheck(20, " is warm");
+	  		numCheck(30, " is cold");
 	  		numCheck(50, " is ice cold");
 
 	  		// Updating record and reset//
