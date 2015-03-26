@@ -21,7 +21,6 @@ $(document).ready(function(){
   	// Global functions //
   	var setNum = function() {
   		randNum = Math.floor((Math.random() * 100) + 1);
-  		console.log(randNum);
   	}
   	var resetInput = function() {
   		$("#userGuess").val(null);
